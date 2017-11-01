@@ -1,0 +1,32 @@
+{
+  "name": "swagger-store",
+  "description": "swagger store - swagger.json server",
+  "scripts": {
+    "postdeploy": "make setup"
+  },
+  "env": {
+    "APP_LOG": {
+      "required": true,
+      "value": "errorlog"
+    },
+    "APP_KEY": {
+      "required": true,
+      "value": "base64:GUc+XBzOg6qrGYXBtgVs+3YbiaTdB/0ioZB5pxX9jJI="
+    },
+    "DB_CONNECTION": {
+      "required": true,
+      "value": "herokupg"
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "papertrail",
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    }
+  ]
+}
