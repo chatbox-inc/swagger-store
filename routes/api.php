@@ -28,7 +28,7 @@ Route::put("/swagger/{API_KEY}",function($apiKey){
 	}else{
 		Apidoc::create([
 			"api_key" => $apiKey,
-			"doc" => json_encode(\request()->all())
+			"doc" => json_encode(\request()->all(),JSON_FORCE_OBJECT)
 		]);
 		return JsonResponse::create([
 			"status" => "OK"
